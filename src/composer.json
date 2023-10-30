@@ -1,0 +1,17 @@
+{
+    "name": "miguel/tinderdwes",
+    "description": "Prueba de ejemplo de una web de citas",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miguel",
+            "email": "migueltomas.informatica@iespacomolla.es"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "ramsey/uuid": "^4.7",
+        "nesbot/carbon": "^2.16"
+    }
+}
