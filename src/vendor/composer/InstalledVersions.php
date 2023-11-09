@@ -91,18 +91,18 @@ private static $installed = array (
     ),
     'ramsey/uuid' => 
     array (
-      'pretty_version' => '4.7.4',
-      'version' => '4.7.4.0',
+      'pretty_version' => '4.7.5',
+      'version' => '4.7.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => '60a4c63ab724854332900504274f6150ff26d286',
+      'reference' => '5f0df49ae5ad6efb7afa69e6bfab4e5b1e080d8e',
     ),
     'rhumsaa/uuid' => 
     array (
       'replaced' => 
       array (
-        0 => '4.7.4',
+        0 => '4.7.5',
       ),
     ),
     'symfony/deprecation-contracts' => 
