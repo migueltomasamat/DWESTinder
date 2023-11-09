@@ -10,6 +10,21 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/src/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/src/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/src/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/src/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/src/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/src/vendor/composer" />
+    </include_path>
+  </component>
   <component name="PhpInterpreters">
     <interpreters>
       <interpreter id="067ff368-2439-4dd1-bc41-79f5d77a6d5a" name="dwestinder-apache_php_composer:latest" home="docker://DATA" auto="false" debugger_id="php.debugger.XDebug">
