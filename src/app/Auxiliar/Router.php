@@ -33,10 +33,20 @@ class Router
     }
 
     public function resolver(string $requestMethod,string $requestURI){
-        $ruta = parse_url($requestURI,PHP_URL_PATH);
+        $path = parse_url($requestURI,PHP_URL_PATH);
 
-        echo "<br>".$ruta."<br>";
-        return call_user_func($this->rutas[$requestMethod][$ruta]);
+        $ruta = explode('/',$path);
+
+        $endpoint=$ruta[1];
+        $parametros=[$ruta[2]];
+
+
+        //return call_user_func($this->rutas[$requestMethod][$ruta]);
+        [$clase,$metodo]=$this->rutas[$requestMethod][$endpoint];
+        $instanciaClase = new $clase();
+        return call_user_func_array([$instanciaClase,$metodo],$parametros);
+
+
 
     }
 

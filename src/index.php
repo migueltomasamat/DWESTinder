@@ -4,6 +4,7 @@
     //include_once "app/auxiliar/Router.php";
     use Carbon\Carbon;
     use App\Auxiliar\Router;
+    use App\Controladores\UsuarioControlador;
 
     echo "Estamos en la página principal<br>";
 
@@ -12,9 +13,15 @@
     //Registrar rutas
 
     //$router->get('/users',['User','getUsuario']);
-    $router->get('/users',function(){
+    /*$router->get('/users',function(){
         echo "Me han pedido un listado de usuarios";
-    });
+    });*/
+
+    $router->get('usuarios',[UsuarioControlador::class,'getTodosLosUsuarios']);
+    $router->get('usuario',[UsuarioControlador::class,'getUsuario']);
+    $router->put('usuario',[UsuarioControlador::class,'modificarUsuario']);
+
+
 
     $router->post('/user
     ',function(){
