@@ -6,7 +6,7 @@
     use App\Auxiliar\Router;
     use App\Controladores\UsuarioControlador;
 
-    echo "Estamos en la página principal<br>";
+    //echo "Estamos en la página principal<br>";
 
     $router = new Router();
 
@@ -20,6 +20,10 @@
     $router->get('usuarios',[UsuarioControlador::class,'getTodosLosUsuarios']);
     $router->get('usuario',[UsuarioControlador::class,'getUsuario']);
     $router->put('usuario',[UsuarioControlador::class,'modificarUsuario']);
+    $router->post('usuario',[UsuarioControlador::class,'guardarUsuario']);
+    $router->delete('usuario',[UsuarioControlador::class,'borrarUsuario']);
+    $router->get('api/usuarios',[UsuarioControlador::class,'mostrarUsuariosAPI']);
+    $router->delete('api/usuario',[UsuarioControlador::class,'borrarUsuarioAPI']);
 
 
 

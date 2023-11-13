@@ -37,8 +37,30 @@ class Router
 
         $ruta = explode('/',$path);
 
-        $endpoint=$ruta[1];
-        $parametros=[$ruta[2]];
+        $numParametros=count($ruta);
+
+        switch ($numParametros){
+            case 2:
+                $endpoint=$ruta[1];
+                $parametros=[];
+                break;
+            case 3:
+                if ($ruta[1]==="api"){
+                    $endpoint="api/".$ruta[2];
+                    $parametros=[];
+                }else{
+                    $endpoint=$ruta[1];
+                    $parametros=[$ruta[2]];
+                }
+                break;
+            case 4:
+                $endpoint="api/".$ruta[2];
+                $parametros=[$ruta[3]];
+                break;
+            default:
+                $endpoint="index";
+                $parametros=[];
+        }
 
 
         //return call_user_func($this->rutas[$requestMethod][$ruta]);
