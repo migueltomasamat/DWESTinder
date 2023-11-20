@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html lang="es" data-bs-theme="auto">
 <head><script src="../plantilla/assets/js/color-modes.js"></script>
 
@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title><?= $titulo ?></title>
+    <title><?= $titulo??"DWES Tinder" ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
