@@ -6,7 +6,7 @@
     use App\Auxiliar\Router;
     use App\Controladores\UsuarioControlador;
 
-    echo "Estamos en la página principal<br>";
+    //echo "Estamos en la página principal<br>";
 
     $router = new Router();
 
@@ -21,7 +21,7 @@
         include_once "vistas/home.php";
     });
     $router->get('/terminos',function (){
-        include_once "vistas/terminos.php";
+        require_once "vistas/terminos.php";
     });
 
 

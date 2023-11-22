@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html lang="es" data-bs-theme="auto">
 <head><script src="../plantilla/assets/js/color-modes.js"></script>
 
