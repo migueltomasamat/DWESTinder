@@ -21,7 +21,7 @@
                     echo " <div class='carousel-item'>";
 
                 }
-                echo "<svg class='bd-placeholder-img' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' preserveAspectRatio='xMidYMid slice' focusable='false'><rect width='100%' height='100%' fill='var(--bs-secondary-color)'/></svg>
+                echo "<img class='bd-placeholder-img' src='". $diapositiva['imagen'] . "'width='100%' height='100%' aria-hidden='true' preserveAspectRatio='xMidYMid slice' focusable='false'></img>
                         <div class='container'>
                         <div class='carousel-caption text-start'>";
                         echo "<h1>".$diapositiva['titulo']."</h1>";
