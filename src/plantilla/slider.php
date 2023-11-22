@@ -1,6 +1,5 @@
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <div class="carousel-indicators">
-
         <?php
             for($i=0;$i<count($diapositivas);$i++){
                 if ($i===0){
@@ -21,7 +20,7 @@
                     echo " <div class='carousel-item'>";
 
                 }
-                echo "<svg class='bd-placeholder-img' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' preserveAspectRatio='xMidYMid slice' focusable='false'><rect width='100%' height='100%' fill='var(--bs-secondary-color)'/></svg>
+                echo "<img class='bd-placeholder-img' width='100%' focusable='false' src='".$diapositiva["imagen"]."'></img>
                         <div class='container'>
                         <div class='carousel-caption text-start'>";
                         echo "<h1>".$diapositiva['titulo']."</h1>";
