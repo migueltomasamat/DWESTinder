@@ -12,7 +12,8 @@
     "minimum-stability": "beta",
     "require": {
         "ramsey/uuid": "^4.7",
-        "nesbot/carbon": "^2.16"
+        "nesbot/carbon": "^2.16",
+        "ext-mysqli": "*"
     },
     "autoload": {
         "psr-4": {

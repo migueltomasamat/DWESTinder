@@ -36,4 +36,11 @@ $enlaces = [
  ];
  include_once __DIR__."/../plantilla/slider.php";
 
+ $datosMensaje = [
+     'encabezado'=>'Somos los p**** amos',
+     'mensajes'=>['Somos responsables de tu historia de amor','Nuestros clientes chuscan'],
+     'imagen'=>'../resources/img/exito.jpg'
+ ];
+ include_once __DIR__."/../plantilla/mensaje.php";
+
  include_once __DIR__."/../plantilla/pie.php";

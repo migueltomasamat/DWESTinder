@@ -17,7 +17,44 @@ services:
       - 80
     ports:
       - '8082:80'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    links:
+      - mysql
+    networks:
+      - tinder
+  mysql:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: toor
+      MARIADB_DATABASE: tinder
+      MARIADB_USER: pringao
+      MARIADB_PASSWORD: passwordpringao
+    volumes:
+      - ./.mariadb:/var/lib/mysql:Z
+    networks:
+      - tinder
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_USER: pringao
+      MYSQL_PASSWORD: passwordpringao
+      PMA_HOST: mysql
+    ports:
+      - '8083:80'
+    links:
+      - mysql
+    networks:
+      - tinder
+networks:
+  tinder:
+    name: tinder
+    driver: bridge
 
+    ##Descomentar si se desea acceder con una aplicación de escritorio
+    #ports:
+      #- '3306:3306'
 # Lanzar con
 # docker-compose up -d –build
 

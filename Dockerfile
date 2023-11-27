@@ -7,6 +7,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       #      nano \
       git \
       unzip \
+      git-core \
+      curl \
+      build-essential \
+      openssl \
+      libssl-dev \
       libicu-dev \
       zlib1g-dev \
       libxml2 \
@@ -16,10 +21,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       cron \
       sudo \
       libzip-dev \
-      #    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
+      && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
+      && docker-php-ext-configure mysqli \
       && docker-php-ext-configure intl \
       && docker-php-ext-install \
-      #      pdo_mysql \
+      pdo\
+      mysqli \
+      pdo_mysql \
       sockets \
       intl \
       opcache \
@@ -29,8 +37,16 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       && rm -rf /var/lib/apt/lists/* \
       && apt-get clean
 
+# Instalación de NPM
+##RUN git clone https://github.com/nodejs/node.git \
+##&& cd node \
+## && ./configure \
+## && make \
+## && sudo make install
+
 WORKDIR /var/www/html
 
+#RUN npm install -D tailwindcss
 ## COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 ## RUN install-php-extensions gd bcmath zip intl opcache
 
