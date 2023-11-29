@@ -50,4 +50,13 @@ class UsuarioControlador
         echo "Hemos borrado el usuario $idUsuario mediante la API";
     }
 
+    public function guardarUsuarioAPI(){
+        $usuario = new Usuario();
+        $usuario->setNombre($_POST['nombre']);
+        $usuario->setApellidos($_POST['apellidos']);
+        $usuario->setEmail($_POST['correo']);
+
+        UsuarioModelo::guardarUsuarioBD($usuario);
+    }
+
 }

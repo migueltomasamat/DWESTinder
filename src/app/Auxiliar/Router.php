@@ -41,6 +41,8 @@ class Router
 
         $numParametros=count($ruta);
 
+        var_dump($ruta);
+
         switch ($numParametros){
             case 2:
                 $accion =$this->rutas[$requestMethod][$ruta[1]];
@@ -52,8 +54,9 @@ class Router
                 }
                 break;
             case 3:
-                if ($ruta[1]==="api"){
-                    $endpoint="api/".$ruta[2];
+                if ($ruta[1]==="/api"){
+                    $endpoint="/api/".$ruta[2];
+                    var_dump($endpoint);
                     $parametros=[];
                 }else{
                     $endpoint=$ruta[1];

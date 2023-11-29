@@ -12,6 +12,7 @@ services:
       - ./.docker/apache/php.ini:/usr/local/etc/php/php.ini
       - ./.docker/apache/httpd.conf:/etc/apache2/conf-available/httpd.conf
       - ./.docker/apache/sites-enabled/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./.docker/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ./src/:/var/www/html
     expose:
       - 80
@@ -25,6 +26,7 @@ services:
       - tinder
   mysql:
     image: mariadb
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MARIADB_ROOT_PASSWORD: toor
       MARIADB_DATABASE: tinder
@@ -34,6 +36,8 @@ services:
       - ./.mariadb:/var/lib/mysql:Z
     networks:
       - tinder
+    ports:
+      - '3307:3306'
   phpmyadmin:
     image: phpmyadmin
     environment:

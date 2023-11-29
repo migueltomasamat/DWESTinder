@@ -9,7 +9,7 @@ class Usuario
 
     private string $apellidos;
 
-    private string $perfil;
+    private array $perfil;
 
     public function __construct()
     {

@@ -32,6 +32,7 @@
     $router->delete('/usuario',[UsuarioControlador::class,'borrarUsuario']);
     $router->get('/api/usuarios',[UsuarioControlador::class,'mostrarUsuariosAPI']);
     $router->delete('/api/usuario',[UsuarioControlador::class,'borrarUsuarioAPI']);
+    $router->post('/api/usuario',[UsuarioControlador::class,'guardarUsuarioAPI']);
 
 
 
