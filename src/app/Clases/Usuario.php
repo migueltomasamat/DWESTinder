@@ -2,17 +2,20 @@
 
 namespace App\Clases;
 
-class Usuario
+class Usuario implements \JsonSerializable
 {
-    private string $email;
-    private string $nombre;
+    private ?string $email;
+    private ?string $nombre;
 
-    private string $apellidos;
+    private ?string $apellidos;
 
     private array $perfil;
 
     public function __construct()
     {
+        $this->email="";
+        $this->nombre="";
+        $this->apellidos="";
         $this->perfil=array();
     }
 
@@ -46,7 +49,7 @@ class Usuario
         $this->apellidos = $apellidos;
     }
 
-    public function getPerfil(): string
+    public function getPerfil(): array
     {
         return $this->perfil;
     }
@@ -56,7 +59,30 @@ class Usuario
         $this->perfil = $perfil;
     }
 
+    public static function crearUsuarioDesdeArray(array $datosUsuario):Usuario{
+        $usuario = new Usuario();
+        $usuario->setEmail($datosUsuario['email']??"sincorreo@email.com");
+        $usuario->setNombre($datosUsuario['nombre']??"Jane");
+        $usuario->setApellidos($datosUsuario['apellidos']??"Doe");
 
 
+        return $usuario;
+    }
 
+
+    public function jsonSerialize(): mixed
+    {
+        $arraySalida = [];
+        if (isset($this->email)){
+            $arraySalida['email']=$this->email;
+        }
+        if (isset($this->nombre)){
+            $arraySalida['nombre']=$this->nombre;
+        }
+        if (isset($this->apellidos)){
+            $arraySalida['apellidos']=$this->apellidos;
+        }
+
+        return $arraySalida;
+    }
 }

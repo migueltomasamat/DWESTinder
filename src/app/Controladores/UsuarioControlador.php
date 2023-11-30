@@ -46,8 +46,12 @@ class UsuarioControlador
         ";
     }
 
-    public function borrarUsuarioAPI(int $idUsuario){
-        echo "Hemos borrado el usuario $idUsuario mediante la API";
+    public function borrarUsuarioAPI(string $emailUsuario){
+        if(UsuarioModelo::borrarUsuarioBD($emailUsuario)){
+            echo "Borrado correcto";
+        }else{
+            echo "No se ha podido borrar el usuario";
+        }
     }
 
     public function guardarUsuarioAPI(){
@@ -57,6 +61,10 @@ class UsuarioControlador
         $usuario->setEmail($_POST['correo']);
 
         UsuarioModelo::guardarUsuarioBD($usuario);
+    }
+
+    public function mostrarUsuarioAPI(string $emailUsuario){
+        echo json_encode(Usuario::crearUsuarioDesdeArray(UsuarioModelo::cargarUsuario($emailUsuario)));
     }
 
 }

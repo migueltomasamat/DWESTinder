@@ -41,7 +41,7 @@ class Router
 
         $numParametros=count($ruta);
 
-        var_dump($ruta);
+        //var_dump($ruta);
 
         switch ($numParametros){
             case 2:
@@ -56,7 +56,7 @@ class Router
             case 3:
                 if ($ruta[1]==="/api"){
                     $endpoint="/api/".$ruta[2];
-                    var_dump($endpoint);
+                    //var_dump($endpoint);
                     $parametros=[];
                 }else{
                     $endpoint=$ruta[1];
@@ -64,7 +64,7 @@ class Router
                 }
                 break;
             case 4:
-                $endpoint="api/".$ruta[2];
+                $endpoint="/api/".$ruta[2];
                 $parametros=[$ruta[3]];
                 break;
             default:
